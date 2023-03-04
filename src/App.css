@@ -1,38 +1,191 @@
-.App {
-  text-align: center;
+header {
+  padding: 25px 8.7% 25px 8.3%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-buttons {
+  gap: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-btn {
+  background: transparent;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.apply-btn {
+  width: 200px;
+  height: 50px;
+  background: #0154d4;
+  border-radius: 10px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.section1 {
+  padding: 48px 12.3% 0 16.9%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left-text {
+  padding: 117px 0 247px 0;
+  /* margin-right: 26.6%; */
+  z-index: 9999;
+}
+
+.section1-title {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 70px;
+  margin-bottom: 10px;
+}
+
+.section1-subtitle {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 30px;
+}
+
+.section1-btns {
+  gap: 1.4%;
+}
+
+.hire-btn {
+  width: 200px;
+  height: 50px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #0154d4;
+}
+
+.walking-man-img {
+  width: 455px;
+  height: 652px;
+}
+
+.section2 {
+  padding: 100px 0 0 16.8%;
+  background-color: #0154d4;
+  height: 800px;
+}
+
+.carousel-active-text-part {
+  width: 42%;
+  height: 281px;
+  margin: 0 8.5% 69px 0;
+}
+
+.carousel-active-summary {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.carousel-active-title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.carousel-active-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-active-link:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.upper-part input {
+  width: fit-content;
+}
+
+.radio-carousel {
+  gap: 1.25%;
+}
+
+.carousel-active-stat1 {
+  width: 20%;
+  height: 160px;
+  margin: 50px 3.3% 140px 0;
+}
+
+.stat-number {
+  font-weight: 900;
+  font-size: 47px;
+  line-height: 77px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.stat-summary {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.lower-part {
+  height: 350px;
+}
+
+.carousel-active-stat2 {
+  width: 20%;
+  margin-top: 50px;
+  margin-right: 4%;
+}
+
+.carousel-index1 {
+  background-color: #0147b4;
+  width: 29.2%;
+  padding: 83px 5%;
+}
+
+.carousel-index2 {
+  background-color: #e0e0e0;
+  width: 29.2%;
+  padding: 83px 5%;
+}
+
+.carousel-index3 {
+  background-color: #f2f2f2;
+  width: 41.7%;
+  padding: 83px 16.7% 83px 5%;
+}
+
+.index-summary {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.white-font {
+  color: #ffffff;
+}
+
+.lower-part button {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  opacity: 0.45;
+  background-color: transparent;
+  width: fit-content;
+}
+
+input[type="radio"] {
+  color: #ffffff;
+}
+
+input[type="radio"]:checked {
+  accent-color: #0147b4;
 }
