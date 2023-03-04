@@ -4,6 +4,7 @@ import BRIEFCASE_IMG from "./Media/briefcase.svg";
 import CARD_IMG from "./Media/card.svg";
 import MAN_IMG from "./Media/climbing man.svg";
 import { useState } from "react";
+// import CarouselWithCards from "./Components/CarouselWithCards";
 
 const employmentStat = [
   {
@@ -47,6 +48,33 @@ const employmentStat = [
       "самый высокий уровень безработицы в третьем квартале 2022 года был отмечен в Туркестанской и Мангистауской областях",
     num2: "179 тыс",
     num2Data: "Численность безработного населения в селе",
+  },
+];
+
+const aboutUs = [
+  {
+    id: 1,
+    text: "PeoplePro - это команда оказывающая услуги по подбору компетентных сотрудников компаниям. Оказываем консультативную помощь в вопросах управления персоналом.",
+  },
+  {
+    id: 2,
+    text: "Мы поможем вам сформировать уникальную кадровую стратегию, поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала по методу DISC.",
+  },
+  {
+    id: 3,
+    text: "Мы помогаем малому и среднему бизнесу выстроить грамотную кадровую политику в зависимости особенностей бизнеса.",
+  },
+  {
+    id: 4,
+    text: "Наша команда недавно на рынке Алматы, но наши члены команды имеют огромный профессиональный и жизненный опыт по управлению персоналом, что способствует почувствовать проблемы руководителей компании.",
+  },
+  {
+    id: 5,
+    text: "При подборе персонала мы работаем без предоплаты.",
+  },
+  {
+    id: 6,
+    text: "Мы сопровождаем сотрудника на исполнительном сроке и даём гарантию по замене кандидата.",
   },
 ];
 
@@ -165,6 +193,21 @@ function App() {
               Подробнее {">"}
             </button>
           </div>
+        </div>
+      </section>
+      <section className="section3">
+        Carousel not done yet
+        {/* <CarouselWithCards /> */}
+      </section>
+      <section className="section4 d-flex flex-column">
+        <h1 className="section4-title">О нас</h1>
+        <div className="about-us">
+          {aboutUs.map((item) => (
+            <div key={item.id}>
+              <h3 className="about-us-num">{item.id}</h3>
+              <h5 className="about-us-text">{item.text}</h5>
+            </div>
+          ))}
         </div>
       </section>
     </div>
