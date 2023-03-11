@@ -3,8 +3,11 @@ import LOGO from "./Media/logo.svg";
 import BRIEFCASE_IMG from "./Media/briefcase.svg";
 import CARD_IMG from "./Media/card.svg";
 import MAN_IMG from "./Media/climbing man.svg";
-import { useState } from "react";
-// import CarouselWithCards from "./Components/CarouselWithCards";
+import LOGO_FOOTER from "./Media/лого.svg";
+import FB_LOGO from "./Media/fb.svg";
+import IG_LOGO from "./Media/inst.svg";
+import { useState, useEffect } from "react";
+import Card from "./Components/Card";
 
 const employmentStat = [
   {
@@ -78,15 +81,104 @@ const aboutUs = [
   },
 ];
 
+const data = [
+  {
+    image: "Apple.svg",
+    companyName: "Apple Inc.",
+    location: "Сан Диего, США",
+    jobTitle: "Главный дизайнер",
+    workingTime: "Полная занятость",
+    description:
+      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала",
+    salary: "250 000",
+  },
+  {
+    image: "McDonalds.svg",
+    companyName: "McDonald's",
+    location: "Удаленно",
+    jobTitle: "Продуктовый менеджер",
+    workingTime: "Полная занятость",
+    description:
+      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
+    salary: "420 000",
+  },
+  {
+    image: "mi.svg",
+    companyName: "Xiaomi Tech.",
+    location: "Удаленно",
+    jobTitle: "Разработчик",
+    workingTime: "Полная занятость",
+    description:
+      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
+    salary: "375 000",
+  },
+  {
+    image: "blackrock.svg",
+    companyName: "BlackRock",
+    location: "Удаленно",
+    jobTitle: "Продуктовый менеджер",
+    workingTime: "Полная занятость",
+    description:
+      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
+    salary: "420 000",
+  },
+  {
+    image: "cocacola.svg",
+    companyName: "Coca Cola",
+    location: "Удаленно",
+    jobTitle: "Продуктовый менеджер",
+    workingTime: "Полная занятость",
+    description:
+      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
+    salary: "420 000",
+  },
+  {
+    image: "meta.svg",
+    companyName: "Meta",
+    location: "Удаленно",
+    jobTitle: "Продуктовый менеджер",
+    workingTime: "Полная занятость",
+    description:
+      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
+    salary: "420 000",
+  },
+  {
+    image: "starbucks.svg",
+    companyName: "Starbucks",
+    location: "Удаленно",
+    jobTitle: "Продуктовый менеджер",
+    workingTime: "Полная занятость",
+    description:
+      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
+    salary: "420 000",
+  },
+  {
+    image: "bitrix.svg",
+    companyName: "Bitrix24",
+    location: "Удаленно",
+    jobTitle: "Продуктовый менеджер",
+    workingTime: "Полная занятость",
+    description:
+      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
+    salary: "420 000",
+  },
+];
+
 function App() {
   const [selected, setSelected] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSelected((selected) => (selected + 1) % 4);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleChange = (event) => {
     setSelected(parseInt(event.target.value));
   };
 
   const handleClick = (event) => {
-    console.log(event);
     setSelected(event);
   };
 
@@ -195,9 +287,11 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="section3">
-        Carousel not done yet
-        {/* <CarouselWithCards /> */}
+      <section className="section3 d-flex flex-column align-items-center">
+        <h2 className="section3-title">Последние вакансии</h2>
+        <Card />
+        <input type="radio" />
+        <button className="show-more-button">Показать больше</button>
       </section>
       <section className="section4 d-flex flex-column">
         <h1 className="section4-title">О нас</h1>
@@ -210,6 +304,48 @@ function App() {
           ))}
         </div>
       </section>
+      <section>Наши партнеры карусель</section>
+      <footer>
+        <div className="top d-flex justify-content-between">
+          <img src={LOGO_FOOTER} alt="logo" />
+          <div>
+            <h6 className="sign-to-mailing-list">Подписаться на рассылку</h6>
+            <div className="footer-container d-flex flex-row align-items-center">
+              <input
+                className="footer-input"
+                type="text"
+                placeholder="Ваш email"
+              />
+              <button className="footer-submit-button" type="submit">
+                Подписаться
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="middle d-flex justify-content-between">
+          <button className="header-btn apply-btn">Подать заявку</button>
+          <div className="footer-buttons d-flex">
+            <button className="header-btn white-font">Главная</button>
+            <button className="header-btn white-font">Ищу работу</button>
+            <button className="header-btn white-font">Нужен сотрудник</button>
+            <button className="header-btn white-font">Вакансии</button>
+            <button className="header-btn white-font">О нас</button>
+          </div>
+        </div>
+        <div className="bottom d-flex justify-content-between align-items-center">
+          <p className="rights-text">
+            © 2023 • PeoplePro • All rights reserved
+          </p>
+          <div className="sm-buttons d-flex">
+            <button>
+              <img src={FB_LOGO} alt="fb logo" />
+            </button>
+            <button>
+              <img src={IG_LOGO} alt="ig logo" />
+            </button>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
