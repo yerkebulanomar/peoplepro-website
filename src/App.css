@@ -229,8 +229,6 @@ input[type="radio"]:checked {
 }
 
 .card {
-  width: 300px;
-  height: 400px;
   background: #ffffff;
   box-shadow: 0px 5px 40px 10px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -391,4 +389,86 @@ footer .bottom {
 
 .sm-buttons button {
   border-radius: 100%;
+}
+
+.section-title {
+  background-color: #f2f2f2;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  color: #bdbdbd;
+  padding: 71px 8.3%;
+}
+
+.last-vacancy-body {
+  padding: 100px 12.2%;
+  gap: 30px;
+}
+
+.last-vacancy-grid-title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #0154d4;
+  margin-right: 10px;
+}
+
+.last-vacancy-grid {
+  display: grid;
+  row-gap: 30px;
+  column-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.vacancy-page-button {
+  margin-top: 20px;
+}
+
+.cv-questionnary {
+  display: grid;
+  row-gap: 20px;
+  column-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cv-add {
+  padding: 100px 33.7% 100px 12.2%;
+}
+
+.cv-description {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0 12.5% 30px 0;
+}
+
+.question-title {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  margin-bottom: 5px;
+}
+
+.question-input {
+  width: 240px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid #828282;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  padding: 10px;
+}
+
+input::placeholder {
+  color: #bebebe;
+}
+
+select {
+  color: #000000;
+}
+
+option {
+  color: #000000;
 }

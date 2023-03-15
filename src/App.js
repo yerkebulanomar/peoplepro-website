@@ -1,13 +1,13 @@
 import "./App.css";
-import LOGO from "./Media/logo.svg";
+import MAN_IMG from "./Media/climbing man.svg";
 import BRIEFCASE_IMG from "./Media/briefcase.svg";
 import CARD_IMG from "./Media/card.svg";
-import MAN_IMG from "./Media/climbing man.svg";
-import LOGO_FOOTER from "./Media/лого.svg";
-import FB_LOGO from "./Media/fb.svg";
-import IG_LOGO from "./Media/inst.svg";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
 import { useState, useEffect } from "react";
 import Card from "./Components/Card";
+import LastVacancies from "./Components/LastVacancies";
+import { data } from "./Components/CompaniesArray";
 
 const employmentStat = [
   {
@@ -81,89 +81,6 @@ const aboutUs = [
   },
 ];
 
-const data = [
-  {
-    image: "Apple.svg",
-    companyName: "Apple Inc.",
-    location: "Сан Диего, США",
-    jobTitle: "Главный дизайнер",
-    workingTime: "Полная занятость",
-    description:
-      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала",
-    salary: "250 000",
-  },
-  {
-    image: "McDonalds.svg",
-    companyName: "McDonald's",
-    location: "Удаленно",
-    jobTitle: "Продуктовый менеджер",
-    workingTime: "Полная занятость",
-    description:
-      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
-    salary: "420 000",
-  },
-  {
-    image: "mi.svg",
-    companyName: "Xiaomi Tech.",
-    location: "Удаленно",
-    jobTitle: "Разработчик",
-    workingTime: "Полная занятость",
-    description:
-      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
-    salary: "375 000",
-  },
-  {
-    image: "blackrock.svg",
-    companyName: "BlackRock",
-    location: "Удаленно",
-    jobTitle: "Продуктовый менеджер",
-    workingTime: "Полная занятость",
-    description:
-      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
-    salary: "420 000",
-  },
-  {
-    image: "cocacola.svg",
-    companyName: "Coca Cola",
-    location: "Удаленно",
-    jobTitle: "Продуктовый менеджер",
-    workingTime: "Полная занятость",
-    description:
-      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
-    salary: "420 000",
-  },
-  {
-    image: "meta.svg",
-    companyName: "Meta",
-    location: "Удаленно",
-    jobTitle: "Продуктовый менеджер",
-    workingTime: "Полная занятость",
-    description:
-      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
-    salary: "420 000",
-  },
-  {
-    image: "starbucks.svg",
-    companyName: "Starbucks",
-    location: "Удаленно",
-    jobTitle: "Продуктовый менеджер",
-    workingTime: "Полная занятость",
-    description:
-      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
-    salary: "420 000",
-  },
-  {
-    image: "bitrix.svg",
-    companyName: "Bitrix24",
-    location: "Удаленно",
-    jobTitle: "Продуктовый менеджер",
-    workingTime: "Полная занятость",
-    description:
-      "Поспособствуем созданию сплочённой команды профессионалов, а также оказываем услуги по оценке персонала ",
-    salary: "420 000",
-  },
-];
-
 function App() {
   const [selected, setSelected] = useState(0);
 
@@ -184,15 +101,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="d-flex justify-content-between">
-        <img src={LOGO} alt="logo" />
-        <div className="header-buttons d-flex">
-          <button className="header-btn">Главная</button>
-          <button className="header-btn">Вакансии</button>
-          <button className="header-btn">О нас</button>
-          <button className="header-btn apply-btn">Подать Заявку</button>
-        </div>
-      </header>
+      <Header />
       <section className="section1 d-flex justify-content-between">
         <div className="left-text d-flex flex-column">
           <h1 className="section1-title">
@@ -289,7 +198,16 @@ function App() {
       </section>
       <section className="section3 d-flex flex-column align-items-center">
         <h2 className="section3-title">Последние вакансии</h2>
-        <Card />
+        <div className="d-flex">
+          {data.map((item, index) => (
+            <Card
+              style={{ height: "400px", width: "300px" }}
+              key={index}
+              {...item}
+            />
+          ))}
+        </div>
+
         <input type="radio" />
         <button className="show-more-button">Показать больше</button>
       </section>
@@ -304,48 +222,100 @@ function App() {
           ))}
         </div>
       </section>
-      <section>Наши партнеры карусель</section>
-      <footer>
-        <div className="top d-flex justify-content-between">
-          <img src={LOGO_FOOTER} alt="logo" />
-          <div>
-            <h6 className="sign-to-mailing-list">Подписаться на рассылку</h6>
-            <div className="footer-container d-flex flex-row align-items-center">
+      <section style={{ background: "red" }}>Наши партнеры карусель</section>
+      <Footer />
+      <LastVacancies />
+      <section>
+        <h1 className="section-title">Создание нового резюме</h1>
+        <div className="cv-add">
+          <h4 className="cv-description">
+            Для поиска подходящих вакансии для вас, вы должны заполнить
+            подробное резюме о себе, либо загрузить готовое резюме в форматах
+            pdf, doc, docx. Для начала, ответьте на следущие вопросы и выберите
+            дальнейщее действие.
+          </h4>
+          <div className="cv-questionnary">
+            <div>
+              <p className="question-title">Имя</p>
+              <input className="question-input" type="text" placeholder="Имя" />
+            </div>
+            <div>
+              <p className="question-title">Фамилия</p>
               <input
-                className="footer-input"
+                className="question-input"
                 type="text"
-                placeholder="Ваш email"
+                placeholder="Фамилия"
               />
-              <button className="footer-submit-button" type="submit">
-                Подписаться
-              </button>
+            </div>
+            <div>
+              <p className="question-title">Пол</p>
+              <select className="question-input" name="sex">
+                <option value="male" selected>
+                  Мужской
+                </option>
+                <option value="female">Женский</option>
+              </select>
+            </div>
+            <div>
+              <p className="question-title">Опыт работы</p>
+              <select className="question-input" name="experience">
+                <option value="noExp" selected>
+                  Без опыта
+                </option>
+                <option value="lvl1">1-3 года</option>
+                <option value="lvl2">4-7 года</option>
+                <option value="lvl3">7-10 года</option>
+              </select>
+            </div>
+            <div>
+              <p className="question-title">Желаемая должность</p>
+              <input
+                className="question-input"
+                type="text"
+                placeholder="Введите данные"
+              />
+            </div>
+            <div>
+              <p className="question-title">Зарплата</p>
+              <input
+                className="question-input"
+                type="text"
+                placeholder="Введите данные"
+              />
+            </div>
+            <div>
+              <p className="question-title">Город</p>
+              <select className="question-input" name="city">
+                <option value="Astana selected">Астана</option>
+                <option value="Almaty">Алматы</option>
+              </select>
+            </div>
+            <div>
+              <p className="question-title">Телефон</p>
+              <input
+                className="question-input"
+                type="text"
+                placeholder="Введите данные"
+              />
+            </div>
+            <div>
+              <p className="question-title">Электронная почта</p>
+              <input
+                className="question-input"
+                type="text"
+                placeholder="Введите данные"
+              />
             </div>
           </div>
-        </div>
-        <div className="middle d-flex justify-content-between">
-          <button className="header-btn apply-btn">Подать заявку</button>
-          <div className="footer-buttons d-flex">
-            <button className="header-btn white-font">Главная</button>
-            <button className="header-btn white-font">Ищу работу</button>
-            <button className="header-btn white-font">Нужен сотрудник</button>
-            <button className="header-btn white-font">Вакансии</button>
-            <button className="header-btn white-font">О нас</button>
+          <div>
+            <button>
+              <img />
+              Прикрепить резюме
+            </button>
+            <button>Отправить</button>
           </div>
         </div>
-        <div className="bottom d-flex justify-content-between align-items-center">
-          <p className="rights-text">
-            © 2023 • PeoplePro • All rights reserved
-          </p>
-          <div className="sm-buttons d-flex">
-            <button>
-              <img src={FB_LOGO} alt="fb logo" />
-            </button>
-            <button>
-              <img src={IG_LOGO} alt="ig logo" />
-            </button>
-          </div>
-        </div>
-      </footer>
+      </section>
     </div>
   );
 }
